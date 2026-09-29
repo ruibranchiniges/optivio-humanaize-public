@@ -82,7 +82,7 @@
     .module .tag { display: inline-block; color: var(--magenta); font-size: 10px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
     .module h3 { margin: 14px 0 8px; color: var(--ink); font-size: 18px; letter-spacing: -.025em; }
     .module p { margin: 0; font-size: 13px; line-height: 1.5; color: #686c76; }
-    .module.future { background: linear-gradient(145deg, #fff, #FFF4FB); }
+    .module.future { background: linear-gradient(145deg, #fff, #FFF4FB); }.roadmap-section{background:linear-gradient(145deg,#fff,#FFF6FB)}.roadmap-grid{margin-top:42px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.roadmap-card{appearance:none;text-align:left;font:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid var(--magenta);padding:24px;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}.roadmap-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(211,10,122,.13)}.roadmap-card b{display:block;color:var(--ink);font-size:18px;margin:13px 0 7px}.roadmap-card span{display:block;color:#686c76;font-size:13px;line-height:1.5}.roadmap-card em{display:block;color:var(--magenta);font-size:12px;font-style:normal;font-weight:850;margin-top:20px}.roadmap-dialog{width:min(640px,calc(100% - 32px));padding:0;border:0;background:#fff;box-shadow:0 30px 90px rgba(0,0,0,.3)}.roadmap-dialog::backdrop{background:rgba(26,23,44,.66)}.roadmap-dialog article{padding:35px}.roadmap-dialog h3{margin:10px 0 12px;color:var(--ink);font-size:29px;letter-spacing:-.04em}.roadmap-dialog p{color:#606571;font-size:15px;line-height:1.6}.roadmap-dialog ul{color:#606571;font-size:14px;line-height:1.65;padding-left:19px}.dialog-close{border:0;background:var(--magenta);color:#fff;padding:11px 16px;border-radius:5px;font:inherit;font-size:13px;font-weight:800;cursor:pointer}
     .screen-section { background: var(--ink); color: #fff; }
     .screen-section .section-title h2 { color: #fff; }
     .screen-section .section-title p { color: rgba(255,255,255,.67); }
@@ -181,10 +181,10 @@
     footer .shell { padding: 22px 0; display: flex; justify-content: space-between; gap: 20px; }
     .source-note { max-width: 710px; }
     @media (max-width: 900px) {
-      .nav-links { display: none; } .hero-grid, .intro, .framework, .closing-grid { grid-template-columns: 1fr; gap: 42px; } .hero { min-height: auto; } .hero-grid { padding: 80px 0; } .exec-card { max-width: 530px; transform: none; } .module-grid { grid-template-columns: 1fr 1fr; } .roles { grid-template-columns: 1fr 1fr; } .guardrail-grid { grid-template-columns: 1fr; } .screen-section { padding: 70px 0; }
+      .nav-links { display: none; } .hero-grid, .intro, .framework, .closing-grid { grid-template-columns: 1fr; gap: 42px; } .hero { min-height: auto; } .hero-grid { padding: 80px 0; } .exec-card { max-width: 530px; transform: none; } .module-grid { grid-template-columns: 1fr 1fr; } .roadmap-grid { grid-template-columns: 1fr; } .roles { grid-template-columns: 1fr 1fr; } .guardrail-grid { grid-template-columns: 1fr; } .screen-section { padding: 70px 0; }
     }
     @media (max-width: 600px) {
-      .shell { width: min(100% - 34px, 1160px); } .topbar .shell { justify-content: center; } .topbar .shell span:last-child { display: none; } nav { height: 68px; } .brand img { width: 126px; } .hero-grid { padding: 63px 0; } .hero h1 { font-size: 45px; } .hero p { font-size: 16px; } .proof, .module-grid, .roles, .real-screen-grid { grid-template-columns: 1fr; } .hero-actions { align-items: start; flex-direction: column; } section { padding: 68px 0; } .app-shell { grid-template-columns: 94px 1fr; } .app-nav { padding: 13px 8px; } .app-nav-item { font-size: 0; min-height: 20px; } .app-logo { font-size: 9px; } .app-main { padding: 16px 12px; } .stats { grid-template-columns: 1fr 1fr; } .team-cards { grid-template-columns: 1fr 1fr; } .process-grid, .disc-layout { grid-template-columns: 1fr; } .browser-window { margin-left: -5px; margin-right: -5px; } .app-title h4 { font-size: 14px; } .scope-card { padding: 25px; } footer .shell { display: block; } footer .shell div + div { margin-top: 12px; }
+      .shell { width: min(100% - 34px, 1160px); } .topbar .shell { justify-content: center; } .topbar .shell span:last-child { display: none; } nav { height: 68px; } .brand img { width: 126px; } .hero-grid { padding: 63px 0; } .hero h1 { font-size: 45px; } .hero p { font-size: 16px; } .proof, .module-grid, .roadmap-grid, .roles, .real-screen-grid { grid-template-columns: 1fr; } .hero-actions { align-items: start; flex-direction: column; } section { padding: 68px 0; } .app-shell { grid-template-columns: 94px 1fr; } .app-nav { padding: 13px 8px; } .app-nav-item { font-size: 0; min-height: 20px; } .app-logo { font-size: 9px; } .app-main { padding: 16px 12px; } .stats { grid-template-columns: 1fr 1fr; } .team-cards { grid-template-columns: 1fr 1fr; } .process-grid, .disc-layout { grid-template-columns: 1fr; } .browser-window { margin-left: -5px; margin-right: -5px; } .app-title h4 { font-size: 14px; } .scope-card { padding: 25px; } footer .shell { display: block; } footer .shell div + div { margin-top: 12px; }
     }
   </style>
 </head>
@@ -193,7 +193,7 @@
   <header>
     <nav class="shell">
       <a class="brand" href="#inicio" aria-label="Optivio"><img src="assets/optivio-horizontal-transparent-final.png" alt="Optivio — Simple Software Solutions" /></a>
-      <div class="nav-links"><a href="#plataforma">Plataforma</a><a href="#telas">Telas</a><a href="#escopo">Escopo inicial</a><a class="nav-button" href="#proximo-passo">Próximo passo</a></div>
+      <div class="nav-links"><a href="#plataforma">Plataforma</a><a href="#jornada-pessoas">Jornada de pessoas</a><a href="#telas">Telas</a><a href="#escopo">Escopo inicial</a><a class="nav-button" href="#proximo-passo">Próximo passo</a></div>
     </nav>
   </header>
   <main>
@@ -244,6 +244,17 @@
       </div>
     </section>
 
+    <section class="roadmap-section" id="jornada-pessoas">
+      <div class="shell">
+        <div class="section-title"><div class="eyebrow">Frentes futuras · dependentes de diagnóstico</div><h2>Uma jornada de pessoas com governança do início à recompensa.</h2><p>Além dos módulos atuais, o Humanaize prevê três frentes de adaptação. Elas aparecem aqui para explicitar a visão de produto — não como funcionalidades já entregues para a SCHÜTZ VASITEX. Clique para ver a intenção de cada etapa e suas condicionantes.</p></div>
+        <div class="roadmap-grid">
+          <button class="roadmap-card" type="button" data-roadmap="hiring"><span class="tag">Em desenvolvimento</span><b>Contratação & Seleção</b><span>Da demanda de vaga aos pareceres, proposta e negociação, com papéis claros entre liderança, RH e aprovações.</span><em>Ver escopo planejado →</em></button>
+          <button class="roadmap-card" type="button" data-roadmap="onboarding"><span class="tag">Em desenvolvimento</span><b>Onboarding & Roadmap</b><span>Organiza acessos, tutor, expectativas iniciais, marcos de experiência e evolução por função.</span><em>Ver escopo planejado →</em></button>
+          <button class="roadmap-card" type="button" data-roadmap="rewards"><span class="tag">Em desenvolvimento</span><b>Bônus & PLR</b><span>Estrutura regras, elegibilidade, metas, alçadas e rastreabilidade para remuneração variável.</span><em>Ver escopo planejado →</em></button>
+        </div>
+      </div>
+    </section>
+
     <section id="diferencial-visual" style="padding:88px 0;background:#ffffff;">
       <div class="shell" style="display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center;">
         <div>
@@ -287,6 +298,7 @@
       <div class="shell closing-grid"><div><div class="eyebrow" style="color:#fff">Próximo passo recomendado</div><h2>Transformar a intenção em um diagnóstico executivo bem delimitado.</h2><p>Antes de dimensionar setup, adaptação, desenvolvimento ou modelo de fornecimento, a Optivio propõe validar o primeiro recorte de gestão e seus critérios de sucesso.</p></div><div class="next-box"><b>Conversa de alinhamento</b><ol><li>Confirmar as perguntas críticas do CEO.</li><li>Selecionar os processos e ritos de maior impacto.</li><li>Mapear fontes de dados e restrições de segurança.</li><li>Definir participantes, evidências e condição de sucesso do primeiro recorte.</li></ol></div></div>
     </section>
   </main>
+  <dialog id="roadmap-dialog" class="roadmap-dialog" aria-labelledby="roadmap-title"><article><div class="eyebrow">Em desenvolvimento · sujeito a diagnóstico</div><h3 id="roadmap-title"></h3><p id="roadmap-description"></p><ul id="roadmap-items"></ul><p><strong>Condição de avanço:</strong> <span id="roadmap-condition"></span></p><button class="dialog-close" type="button" onclick="document.getElementById('roadmap-dialog').close()">Fechar</button></article></dialog>
   <footer><div class="shell"><div class="source-note">Contexto público: SCHÜTZ VASITEX — embalagens industriais, IBCs, tambores, bombonas, recondicionamento, reciclagem e logística reversa. Fonte: <a href="https://www.schuetz-packaging.net/schuetz-vasitex-brazil/pt/" target="_blank" rel="noreferrer">site institucional da SCHÜTZ VASITEX</a>. Premissas de foco e escala são de conversa inicial e requerem validação conjunta.</div><div>Optivio • Simple Software Solutions<br/>Rui Branchini • Head de Operações</div></div></footer>
   <script>
     const tabs = document.querySelectorAll('.screen-tab');
@@ -296,6 +308,20 @@
       panels.forEach(panel => panel.classList.remove('active'));
       tab.classList.add('active');
       document.getElementById(tab.dataset.panel).classList.add('active');
+    }));
+    const roadmapContent = {
+      hiring: { title: 'Contratação & Seleção', description: 'Uma camada para transformar a demanda de vaga em uma seleção organizada, documentada e governada pela política de pessoas da organização.', items: ['Demanda, orçamento e job description por função', 'Etapas, scorecards, entrevistas e pareceres consolidados', 'Proposta, negociação e alçadas com rastreabilidade'], condition: 'requer desenho conjunto de cargos, faixas, critérios, responsáveis e regras de contratação da SCHÜTZ VASITEX.' },
+      onboarding: { title: 'Onboarding & Roadmap Inicial', description: 'Uma jornada estruturada para transformar a admissão em clareza de responsabilidades, integração e evolução acompanhada.', items: ['Checklist de admissão, acessos, equipamentos e responsáveis', 'Tutor, plano de entrada e metas de 30/60/90 dias ou marcos equivalentes', 'Evidências de autonomia e validação da experiência'], condition: 'requer mapeamento dos ritos de RH, da realidade das plantas e do mapa de acessos por função.' },
+      rewards: { title: 'Bônus & PLR', description: 'Uma camada confidencial para documentar as regras e as decisões de remuneração variável sem substituir folha, políticas ou aprovação executiva.', items: ['Período, política, elegibilidade e fontes de evidência', 'Vínculo transparente com metas e regras aprovadas', 'Simulações orientativas, alçadas e histórico de decisão'], condition: 'requer política homologada, definição de orçamento, aprovações de RH/Financeiro/Jurídico e integração segura à fonte oficial.' }
+    };
+    const roadmapDialog = document.getElementById('roadmap-dialog');
+    document.querySelectorAll('[data-roadmap]').forEach((card) => card.addEventListener('click', () => {
+      const item = roadmapContent[card.dataset.roadmap];
+      document.getElementById('roadmap-title').textContent = item.title;
+      document.getElementById('roadmap-description').textContent = item.description;
+      document.getElementById('roadmap-items').innerHTML = item.items.map((entry) => `<li>${entry}</li>`).join('');
+      document.getElementById('roadmap-condition').textContent = item.condition;
+      roadmapDialog.showModal();
     }));
   </script>
 </body>
