@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Proposta conceitual Optivio: Humanaize para gestão assistida e evolução organizacional na Schütz-Vasitex." />
+  <title>Humanaize para Schütz-Vasitex | Optivio</title>
+  <style>
+    :root {
+      --ink: #1A172C;
+      --ink-2: #242136;
+      --graphite: #3D414A;
+      --slate: #6A6E79;
+      --magenta: #D30A7A;
+      --magenta-dark: #AC003C;
+      --pink: #F22BA2;
+      --mist: #F7F7FA;
+      --line: rgba(61,65,74,.15);
+      --white: #FFFFFF;
+      --green: #2E9B76;
+      --amber: #E4A53C;
+      --blue: #3D7CC9;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--graphite); background: var(--white); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .eyebrow { color: var(--magenta); text-transform: uppercase; font-size: 11px; font-weight: 800; letter-spacing: .14em; }
+    .topbar { background: var(--ink); color: #fff; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .topbar .shell { height: 34px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: rgba(255,255,255,.68); }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(26,23,44,.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.1); }
+    nav { height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand img { width: 148px; height: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 24px; color: rgba(255,255,255,.78); font-size: 13px; font-weight: 650; }
+    .nav-links a:hover { color: #fff; }
+    .nav-button { background: var(--magenta); color: #fff; padding: 11px 15px; border-radius: 7px; font-size: 12px; font-weight: 800; }
+    .hero { min-height: 662px; color: #fff; overflow: hidden; position: relative; background: radial-gradient(circle at 74% 38%, rgba(211,10,122,.44), transparent 27%), linear-gradient(135deg, #161424 0%, #20152E 50%, #242136 100%); }
+    .hero:before { content: ""; position: absolute; width: 560px; height: 560px; border: 1px solid rgba(242,43,162,.22); border-radius: 50%; right: -210px; top: -70px; }
+    .hero:after { content: ""; position: absolute; width: 290px; height: 290px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; right: 22%; bottom: -180px; }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 68px; align-items: center; min-height: 662px; }
+    .hero h1 { max-width: 640px; margin: 13px 0 18px; letter-spacing: -.055em; font-size: clamp(45px, 5vw, 71px); line-height: .98; }
+    .hero h1 em { font-style: normal; color: var(--pink); }
+    .hero p { max-width: 590px; margin: 0; font-size: 18px; color: rgba(255,255,255,.76); line-height: 1.55; }
+    .hero-actions { margin-top: 32px; display: flex; align-items: center; gap: 22px; }
+    .primary-cta { display: inline-flex; background: #fff; color: var(--ink); padding: 14px 18px; border-radius: 7px; font-weight: 850; font-size: 14px; }
+    .muted-link { color: rgba(255,255,255,.75); font-size: 13px; font-weight: 700; }
+    .proof { margin-top: 42px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .proof div { padding-left: 13px; border-left: 2px solid var(--magenta); font-size: 12px; color: rgba(255,255,255,.68); line-height: 1.4; }
+    .proof b { display: block; color: #fff; font-size: 13px; margin-bottom: 3px; }
+    .exec-card { position: relative; z-index: 2; background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.05)); border: 1px solid rgba(255,255,255,.18); border-radius: 18px; padding: 24px; box-shadow: 0 32px 70px rgba(0,0,0,.27); backdrop-filter: blur(8px); transform: rotate(2deg); }
+    .exec-card .card-top { display: flex; justify-content: space-between; align-items: start; border-bottom: 1px solid rgba(255,255,255,.16); padding-bottom: 17px; }
+    .exec-card .overline { color: rgba(255,255,255,.58); text-transform: uppercase; font-size: 10px; letter-spacing: .12em; font-weight: 800; }
+    .exec-card h3 { margin: 5px 0 0; font-size: 20px; letter-spacing: -.025em; }
+    .status { color: #fff; background: rgba(242,43,162,.3); border: 1px solid rgba(242,43,162,.5); padding: 5px 8px; border-radius: 20px; font-size: 10px; font-weight: 800; }
+    .signal { display: grid; grid-template-columns: 1.2fr .8fr; gap: 15px; padding: 19px 0 8px; }
+    .signal-title { font-size: 13px; font-weight: 800; color: #fff; }
+    .signal p { font-size: 11px; margin-top: 5px; color: rgba(255,255,255,.64); }
+    .mini-bars { display: grid; gap: 9px; padding-top: 3px; }
+    .mini-bar { display: grid; grid-template-columns: 1fr 30px; gap: 8px; align-items: center; font-size: 10px; color: rgba(255,255,255,.72); }
+    .mini-bar span { display: block; height: 6px; border-radius: 99px; background: rgba(255,255,255,.18); overflow: hidden; }
+    .mini-bar i { height: 100%; display: block; border-radius: inherit; background: var(--pink); }
+    .priority-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-top: 11px; }
+    .priority { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.09); border-radius: 10px; padding: 12px; }
+    .priority strong { display: block; font-size: 11px; color: #fff; }
+    .priority span { display: block; margin-top: 6px; font-size: 10px; color: rgba(255,255,255,.62); line-height: 1.35; }
+    section { padding: 100px 0; }
+    .intro { display: grid; grid-template-columns: .78fr 1.22fr; gap: 72px; align-items: start; }
+    .intro h2, .section-title h2 { margin: 10px 0 0; font-size: clamp(31px, 3.4vw, 47px); line-height: 1.05; letter-spacing: -.045em; color: var(--ink); }
+    .intro-copy { font-size: 17px; line-height: 1.65; color: #555a65; }
+    .intro-copy p:first-child { margin-top: 0; }
+    .principles { margin-top: 26px; border-top: 1px solid var(--line); }
+    .principle { padding: 16px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 28px 1fr; gap: 12px; }
+    .principle-number { color: var(--magenta); font-weight: 850; font-size: 13px; }
+    .principle b { display: block; color: var(--ink); font-size: 14px; }
+    .principle p { margin: 4px 0 0; font-size: 13px; line-height: 1.45; }
+    .soft { background: var(--mist); }
+    .section-title { max-width: 690px; }
+    .section-title p { margin: 17px 0 0; font-size: 16px; line-height: 1.6; color: #656975; }
+    .module-grid { margin-top: 46px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .module { min-height: 217px; padding: 26px 23px; background: #fff; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .module .tag { display: inline-block; color: var(--magenta); font-size: 10px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .module h3 { margin: 14px 0 8px; color: var(--ink); font-size: 18px; letter-spacing: -.025em; }
+    .module p { margin: 0; font-size: 13px; line-height: 1.5; color: #686c76; }
+    .module.future { background: linear-gradient(145deg, #fff, #FFF4FB); }
+    .screen-section { background: var(--ink); color: #fff; }
+    .screen-section .section-title h2 { color: #fff; }
+    .screen-section .section-title p { color: rgba(255,255,255,.67); }
+    .screen-tabs { margin: 42px 0 22px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .screen-tab { cursor: pointer; border: 1px solid rgba(255,255,255,.22); color: rgba(255,255,255,.7); background: transparent; border-radius: 5px; padding: 9px 11px; font: inherit; font-size: 12px; font-weight: 750; }
+    .screen-tab.active { color: #fff; border-color: var(--pink); background: rgba(242,43,162,.17); }
+    .screen-panel { display: none; }
+    .screen-panel.active { display: block; }
+    .browser-window { background: #f8fafc; overflow: hidden; color: #293140; border: 1px solid rgba(255,255,255,.18); border-radius: 13px; box-shadow: 0 25px 70px rgba(0,0,0,.32); }
+    .browser-head { height: 39px; background: #edf0f4; border-bottom: 1px solid #dfe4ea; display: flex; align-items: center; gap: 6px; padding: 0 14px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #bbc2ce; }
+    .address { margin-left: 8px; height: 21px; flex: 1; border-radius: 3px; background: #fff; color: #98a1ae; font-size: 9px; padding: 5px 10px; }
+    .app-shell { min-height: 425px; display: grid; grid-template-columns: 175px 1fr; }
+    .app-nav { background: #173D63; color: #fff; padding: 19px 13px; }
+    .app-logo { font-size: 13px; font-weight: 900; letter-spacing: .02em; margin-bottom: 26px; }
+    .app-logo small { font-size: 8px; font-weight: 500; opacity: .65; display: block; margin-top: 3px; }
+    .app-nav-item { padding: 8px 8px; border-radius: 4px; margin-bottom: 5px; font-size: 9px; color: rgba(255,255,255,.7); }
+    .app-nav-item.current { background: rgba(255,255,255,.14); color: #fff; font-weight: 800; }
+    .app-main { padding: 23px 25px; background: #fbfcfe; }
+    .app-title { display: flex; justify-content: space-between; align-items: start; }
+    .app-title h4 { margin: 0; color: #1f2d3d; font-size: 19px; letter-spacing: -.025em; }
+    .app-title p { margin: 5px 0 0; color: #758190; font-size: 10px; }
+    .pill { padding: 7px 9px; background: #fff6fb; color: var(--magenta); border: 1px solid #f6cce7; border-radius: 4px; font-size: 9px; font-weight: 800; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 11px; margin: 22px 0; }
+    .stat { padding: 13px; background: #fff; border: 1px solid #e3e7ed; border-radius: 7px; }
+    .stat b { display: block; font-size: 20px; color: #1c2f47; }
+    .stat span { display: block; margin-top: 7px; color: #84909d; font-size: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
+    .team-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; }
+    .team-card { min-height: 111px; padding: 13px; background: #fff; border: 1px solid #e3e7ed; border-radius: 7px; }
+    .avatar { width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; color: #fff; background: #173D63; border-radius: 5px; font-size: 9px; font-weight: 900; }
+    .team-card strong { display: inline-block; vertical-align: top; margin: 3px 0 0 7px; color: #22334a; font-size: 10px; }
+    .team-card p { margin: 8px 0 0; color: #7c8895; font-size: 8px; line-height: 1.45; }
+    .team-card .bar { margin-top: 10px; height: 5px; background: #e9edf2; border-radius: 99px; overflow: hidden; }
+    .team-card .bar i { display: block; height: 100%; background: #df8b26; border-radius: inherit; }
+    .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+    .process-group { padding: 14px; background: #fff; border: 1px solid #e2e7ed; border-radius: 7px; }
+    .process-group > b { font-size: 10px; color: #22334a; }
+    .subprocess { margin-top: 10px; padding: 10px; background: #f7f9fc; border-left: 2px solid #df8b26; }
+    .subprocess strong { display: block; font-size: 9px; color: #42546a; }
+    .subprocess p { margin: 5px 0 0; color: #748090; font-size: 8px; line-height: 1.35; }
+    .matrix { display: grid; grid-template-columns: 54px repeat(3, 1fr); gap: 4px; margin: 24px auto 0; max-width: 440px; }
+    .axis { color: #6c7784; font-size: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+    .cell { min-height: 69px; padding: 7px; border-radius: 4px; font-size: 8px; line-height: 1.25; }
+    .cell b { display: block; color: #283547; margin-bottom: 5px; }
+    .cell.a { background: #eff3f7; } .cell.b { background: #f9efcf; } .cell.c { background: #f8d7e9; } .cell.d { background: #e1f0ea; }
+    .disc-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 18px; margin-top: 22px; }
+    .disc-card { background: #fff; border: 1px solid #e3e7ed; border-radius: 7px; padding: 15px; }
+    .disc-card h5 { margin: 0; font-size: 10px; color: #24354b; }
+    .radar { width: 150px; height: 150px; margin: 14px auto 0; position: relative; border: 1px solid #d7dee7; transform: rotate(45deg); }
+    .radar:before, .radar:after { content: ""; position: absolute; background: #dce3eb; }
+    .radar:before { width: 1px; height: 100%; left: 50%; } .radar:after { width: 100%; height: 1px; top: 50%; }
+    .radar-shape { width: 82px; height: 69px; position: absolute; left: 28px; top: 35px; background: rgba(211,10,122,.3); border: 2px solid var(--magenta); clip-path: polygon(48% 0, 100% 40%, 71% 100%, 0 72%, 12% 30%); }
+    .disc-bars { display: grid; gap: 11px; padding-top: 5px; }
+    .disc-row { display: grid; grid-template-columns: 68px 1fr 22px; gap: 8px; align-items: center; color: #596474; font-size: 9px; }
+    .disc-row span { height: 7px; border-radius: 99px; background: #e7ebf0; overflow: hidden; } .disc-row i { display: block; height: 100%; border-radius: inherit; }
+    .callout { margin-top: 15px; padding: 12px; background: #fff6fb; border-left: 2px solid var(--magenta); color: #6b4960; font-size: 9px; line-height: 1.45; }
+    .screen-caption { margin: 18px 0 0; color: rgba(255,255,255,.58); font-size: 11px; line-height: 1.5; }
+    .real-screen-grid { margin-top: 42px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+    .real-screen { margin: 0; padding: 15px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.045); }
+    .real-screen img { width: 100%; height: 310px; object-fit: contain; display: block; background: #fff; }
+    .real-screen figcaption { margin: 15px 3px 2px; color: #fff; font-size: 15px; font-weight: 800; }
+    .real-screen p { margin: 6px 3px 0; color: rgba(255,255,255,.66); font-size: 12px; line-height: 1.5; }
+    .guidance-strip { margin-top: 30px; display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding: 21px 23px; background: rgba(242,43,162,.13); border-left: 3px solid var(--pink); }
+    .guidance-strip strong { color: var(--pink); font-size: 24px; line-height: 1; }
+    .guidance-strip b { display: block; color: #fff; font-size: 15px; margin-bottom: 5px; }
+    .guidance-strip span { color: rgba(255,255,255,.72); font-size: 13px; line-height: 1.5; }
+    .framework { display: grid; grid-template-columns: 1.1fr .9fr; gap: 70px; align-items: center; }
+    .flow { margin-top: 30px; display: grid; gap: 0; }
+    .flow-step { position: relative; display: grid; grid-template-columns: 45px 1fr; gap: 17px; min-height: 85px; }
+    .flow-step:not(:last-child):before { content: ""; position: absolute; left: 21px; top: 36px; bottom: 0; border-left: 1px solid #d6dce3; }
+    .flow-dot { position: relative; z-index: 1; width: 43px; height: 43px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #fff0f8; color: var(--magenta); font-size: 13px; font-weight: 900; }
+    .flow-step h4 { margin: 0; color: var(--ink); font-size: 16px; letter-spacing: -.015em; }
+    .flow-step p { margin: 6px 0 0; color: #68717d; font-size: 13px; line-height: 1.5; }
+    .scope-card { background: var(--ink); padding: 32px; color: #fff; }
+    .scope-card h3 { margin: 0; font-size: 24px; letter-spacing: -.035em; }
+    .scope-card p { margin: 12px 0 0; color: rgba(255,255,255,.67); font-size: 14px; line-height: 1.55; }
+    .scope-line { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.14); display: flex; gap: 13px; color: rgba(255,255,255,.84); font-size: 13px; }
+    .scope-line b { color: var(--pink); }
+    .roles { margin-top: 54px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .role { padding: 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; }
+    .role b { display: block; font-size: 14px; color: var(--ink); }
+    .role span { display: block; margin-top: 8px; font-size: 12px; line-height: 1.45; color: #686e78; }
+    .guardrails { background: #FFF5FA; }
+    .guardrail-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .guardrail { padding: 22px 20px; border-top: 2px solid var(--magenta); background: rgba(255,255,255,.78); }
+    .guardrail b { color: var(--ink); font-size: 15px; }
+    .guardrail p { margin: 8px 0 0; color: #686a72; font-size: 13px; line-height: 1.5; }
+    .closing { padding: 104px 0; color: #fff; background: linear-gradient(135deg, var(--magenta-dark), var(--magenta), #E41B92); }
+    .closing-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 72px; align-items: end; }
+    .closing h2 { margin: 12px 0 0; max-width: 720px; font-size: clamp(38px, 4.6vw, 62px); line-height: 1; letter-spacing: -.05em; }
+    .closing p { margin: 20px 0 0; max-width: 680px; color: rgba(255,255,255,.84); font-size: 17px; line-height: 1.55; }
+    .next-box { padding: 28px; border: 1px solid rgba(255,255,255,.42); background: rgba(102,0,52,.18); }
+    .next-box b { font-size: 17px; }
+    .next-box ol { padding-left: 17px; margin: 15px 0 0; color: rgba(255,255,255,.86); font-size: 13px; line-height: 1.75; }
+    footer { background: var(--ink); color: rgba(255,255,255,.6); font-size: 11px; }
+    footer .shell { padding: 22px 0; display: flex; justify-content: space-between; gap: 20px; }
+    .source-note { max-width: 710px; }
+    @media (max-width: 900px) {
+      .nav-links { display: none; } .hero-grid, .intro, .framework, .closing-grid { grid-template-columns: 1fr; gap: 42px; } .hero { min-height: auto; } .hero-grid { padding: 80px 0; } .exec-card { max-width: 530px; transform: none; } .module-grid { grid-template-columns: 1fr 1fr; } .roles { grid-template-columns: 1fr 1fr; } .guardrail-grid { grid-template-columns: 1fr; } .screen-section { padding: 70px 0; }
+    }
+    @media (max-width: 600px) {
+      .shell { width: min(100% - 34px, 1160px); } .topbar .shell { justify-content: center; } .topbar .shell span:last-child { display: none; } nav { height: 68px; } .brand img { width: 126px; } .hero-grid { padding: 63px 0; } .hero h1 { font-size: 45px; } .hero p { font-size: 16px; } .proof, .module-grid, .roles, .real-screen-grid { grid-template-columns: 1fr; } .hero-actions { align-items: start; flex-direction: column; } section { padding: 68px 0; } .app-shell { grid-template-columns: 94px 1fr; } .app-nav { padding: 13px 8px; } .app-nav-item { font-size: 0; min-height: 20px; } .app-logo { font-size: 9px; } .app-main { padding: 16px 12px; } .stats { grid-template-columns: 1fr 1fr; } .team-cards { grid-template-columns: 1fr 1fr; } .process-grid, .disc-layout { grid-template-columns: 1fr; } .browser-window { margin-left: -5px; margin-right: -5px; } .app-title h4 { font-size: 14px; } .scope-card { padding: 25px; } footer .shell { display: block; } footer .shell div + div { margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="shell"><span>Proposta comercial exclusiva • SCHÜTZ VASITEX Brasil • Sem valores • Versão 1.0</span><span>Optivio — Simple Software Solutions</span></div></div>
+  <header>
+    <nav class="shell">
+      <a class="brand" href="#inicio" aria-label="Optivio"><img src="assets/optivio-horizontal-transparent-final.png" alt="Optivio — Simple Software Solutions" /></a>
+      <div class="nav-links"><a href="#plataforma">Plataforma</a><a href="#telas">Telas</a><a href="#escopo">Escopo inicial</a><a class="nav-button" href="#proximo-passo">Próximo passo</a></div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">Proposta para SCHÜTZ VASITEX • Brasil</div>
+          <h1>Da direção ao chão de fábrica: <em>gestão assistida</em> que torna a execução visível.</h1>
+          <p>Humanaize é uma plataforma de gestão organizacional que conecta processos, pessoas, metas e decisões. Para a SCHÜTZ VASITEX, a proposta é começar pela camada executiva–gerencial e adaptar o produto à cultura, aos sistemas e às rotinas da indústria.</p>
+          <div class="hero-actions"><a class="primary-cta" href="#escopo">Conhecer o escopo inicial</a><a class="muted-link" href="#plataforma">Ver o que a plataforma organiza →</a></div>
+          <div class="proof"><div><b>Versão em operação</b>Aplicada na gestão de Operações do GES.</div><div><b>Adaptação taylor-made</b>Sem transposição automática de processos ou cultura.</div><div><b>Sem valores nesta etapa</b>Diagnóstico antes de qualquer dimensionamento.</div></div>
+        </div>
+        <div class="exec-card" aria-label="Exemplo conceitual de painel executivo">
+          <div class="card-top"><div><div class="overline">Camada CEO → Gerências</div><h3>Prioridades sob gestão</h3></div><span class="status">VISÃO EXECUTIVA</span></div>
+          <div class="signal"><div><div class="signal-title">Onde a gestão precisa atuar</div><p>Processos críticos, planos, projetos e sinais de pessoas consolidados em uma rotina de decisão.</p></div><div class="mini-bars"><div class="mini-bar"><span><i style="width:78%"></i></span><b>78%</b></div><div class="mini-bar"><span><i style="width:54%; background:#E4A53C"></i></span><b>54%</b></div><div class="mini-bar"><span><i style="width:37%; background:#3D7CC9"></i></span><b>37%</b></div></div></div>
+          <div class="priority-grid"><div class="priority"><strong>Governança de processos</strong><span>Responsável, cadência e evidência visíveis.</span></div><div class="priority"><strong>Agenda de projetos</strong><span>Dependências e risco executivo em uma visão.</span></div><div class="priority"><strong>Talentos e sucessão</strong><span>Desempenho e desenvolvimento em contexto.</span></div><div class="priority"><strong>Decisões assistidas</strong><span>LLMs organizam informação; líderes mantêm a decisão.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contexto">
+      <div class="shell intro">
+        <div><div class="eyebrow">O ponto de partida</div><h2>Uma camada de gestão que não substitui o gestor. Amplifica sua capacidade de coordenar.</h2></div>
+        <div class="intro-copy">
+          <p>A SCHÜTZ VASITEX atua no mercado brasileiro de embalagens industriais, com produção, limpeza, recondicionamento, reciclagem e logística reversa. Seu portfólio combina IBCs, tambores, bombonas e serviços orientados a ciclo de vida e sustentabilidade.</p>
+          <p>A solicitação inicial indica uma oportunidade de curto prazo: reduzir a perda de contexto entre o C-level e as gerências de Controladoria, RH, Fiscal, Industrial e Comercial. A proposta não presume causa nem solução antes do diagnóstico; organiza uma forma objetiva de transformar prioridades em processos, ritos, evidências e decisões.</p>
+          <div class="principles">
+            <div class="principle"><span class="principle-number">01</span><div><b>Foco em gestão, não em mais um sistema isolado</b><p>A plataforma se conecta à cadência de decisão e usa as ferramentas já existentes como fontes de contexto.</p></div></div>
+            <div class="principle"><span class="principle-number">02</span><div><b>Modelo industrial e culturalmente adaptado</b><p>Vocabulário, indicadores, responsabilidades e políticas são desenhados para a realidade da SCHÜTZ VASITEX.</p></div></div>
+            <div class="principle"><span class="principle-number">03</span><div><b>Começo curto, desenho evolutivo</b><p>O primeiro ciclo ataca a camada CEO–gerências e deixa uma base segura para expansão posterior.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="plataforma">
+      <div class="shell">
+        <div class="section-title"><div class="eyebrow">Módulos atuais e frente de adaptação</div><h2>Processo, resultado, pessoas, remuneração e contexto em um mesmo sistema de gestão.</h2><p>A versão atual está em operação no GES. Para a SCHÜTZ VASITEX, cada módulo será configurado conforme a cultura industrial, as políticas de RH e a prioridade do CEO. Os controles são orientativos: simplificam preenchimento, atualização e preparação de ritos; não substituem julgamento gerencial.</p></div>
+        <div class="module-grid">
+          <article class="module"><span class="tag">Em operação</span><h3>Mapa de processos e job descriptions vivos</h3><p>Processos macro, subprocessos, atividades, tarefas, sistemas, responsáveis, frequência e indicadores em uma matriz navegável e atualizável.</p></article>
+          <article class="module"><span class="tag">Em operação</span><h3>CHA, ciclos e desempenho</h3><p>Critérios por função, ciclos temporais, contexto do período e evolução do desempenho vinculados às atribuições combinadas.</p></article>
+          <article class="module"><span class="tag">Em operação</span><h3>OKRs e portfólio de projetos</h3><p>Objetivos, resultados-chave, responsáveis, prioridades e acompanhamento de iniciativas que atravessam áreas.</p></article>
+          <article class="module"><span class="tag">Em operação</span><h3>DISC, inventário e desenvolvimento</h3><p>Histórico comportamental, leituras por pessoa e área e inventário protegido; PDI e carreira corporativa são frentes de consolidação.</p></article>
+          <article class="module"><span class="tag">Versão atual</span><h3>9-Box e Importância × Desempenho</h3><p>Talentos, potencial, desempenho e fatores competitivos organizados com evidências; a decisão final permanece documentada pela liderança.</p></article>
+          <article class="module"><span class="tag">Versão atual + adaptação</span><h3>RH, remuneração, bônus e PLR</h3><p>Já há cargos, faixas e linha do tempo de salário, bônus e comissão com acesso confidencial. Regras, elegibilidade e histórico de PLR serão desenhados conforme política da SCHÜTZ VASITEX.</p></article>
+          <article class="module future"><span class="tag">A validar no diagnóstico</span><h3>Sínteses Willow, integrações e camada industrial</h3><p>Sketchnotes handdraw, Asana, Trello, Planner, sistemas corporativos, trilhas, indicadores e painéis específicos da operação industrial.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferencial-visual" style="padding:88px 0;background:#ffffff;">
+      <div class="shell" style="display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center;">
+        <div>
+          <div class="eyebrow">Telas demonstrativas e síntese handdraw</div>
+          <h2 style="margin:10px 0 18px;font-size:40px;line-height:1.08;letter-spacing:-.04em;color:#1A172C;">A interface organiza. A sketchnote torna a decisão memorável.</h2>
+          <p style="font-size:16px;line-height:1.6;color:#656975;margin:0;">Além dos painéis de processos, objetivos e pessoas, o Humanaize transforma conteúdos densos em sínteses visuais handdraw, disponíveis ao líder junto com o relatório de origem. É uma leitura rápida, estruturada e rastreável para ritos executivos.</p>
+          <p style="font-size:12px;line-height:1.5;color:#6A6E79;margin:18px 0 0;">A tela e a síntese abaixo usam dados demonstrativos, sem informações da SCHÜTZ VASITEX ou dados internos identificáveis do GES.</p>
+        </div>
+        <div style="display:grid;gap:16px;">
+          <img src="assets/humanaize-tela-demonstrativa-optivio.png" alt="Tela demonstrativa do Humanaize" style="width:100%;height:205px;object-fit:contain;border:1px solid #e4e5ea;background:#f7f7fa;" />
+          <img src="assets/humanaize-sketchnote-optivio-gestao-executiva.png" alt="Sketchnote handdraw de gestão executiva assistida" style="width:100%;height:265px;object-fit:contain;border:1px solid #e4e5ea;background:#fbf8f3;" />
+        </div>
+      </div>
+    </section>
+    <section class="screen-section" id="telas">
+      <div class="shell">
+        <div class="section-title"><div class="eyebrow" style="color:#F22BA2">Telas reais da versão atual</div><h2>Uma interface que converte complexidade em leitura de gestão.</h2><p>Os exemplos abaixo são telas do Humanaize em operação, com dados internos protegidos quando necessário. Para a SCHÜTZ VASITEX, o conteúdo, vocabulário, regras de acesso e indicadores serão adaptados à realidade industrial.</p></div>
+        <div class="real-screen-grid">
+          <figure class="real-screen"><img src="assets/humanaize-tela-processos-macro.png" alt="Tela real da Matriz Macro de Processos" /><figcaption>Processos macro e job descriptions vivos</figcaption><p>Estrutura processos, atividades, tarefas, responsáveis, sistemas e evidências para atualização contínua.</p></figure>
+          <figure class="real-screen"><img src="assets/humanaize-tela-okrs.png" alt="Tela real de OKRs e projetos" /><figcaption>OKRs e portfólio de projetos</figcaption><p>Orienta o preenchimento de resultados-chave, avanço, responsáveis, sinais de risco e prioridades de acompanhamento.</p></figure>
+          <figure class="real-screen"><img src="assets/humanaize-tela-ciclos-avaliacao.png" alt="Tela real de ciclos de avaliação" /><figcaption>Ciclos de avaliação e histórico</figcaption><p>Registra o contexto do período, eventos relevantes e comentários gerenciais para evitar avaliações sem memória organizacional.</p></figure>
+          <figure class="real-screen"><img src="assets/humanaize-tela-disc-feedback.png" alt="Tela real de devolutiva DISC" /><figcaption>DISC, evolução e orientação de feedback</figcaption><p>Traduz o perfil em pontos fortes, desenvolvimento e dicas de comunicação para uma conversa de feedback mais efetiva.</p></figure>
+        </div>
+        <div class="guidance-strip"><strong>⏱</strong><div><b>Preparação de entregas e prevenção de procrastinação</b><span>A capacidade de agendamento de lembretes por ciclo está prevista na evolução do produto. Ela poderá preparar líderes para entregas pontuais a superiores, RH e subordinados, sem transformar o sistema em cobrança automática ou substituir os ritos de gestão.</span></div></div>
+      </div>
+    </section>
+
+    <section id="escopo">
+      <div class="shell framework">
+        <div><div class="eyebrow">Foco inicial: curto prazo, alto contexto</div><h2 class="section-title" style="font-size:clamp(31px,3.4vw,47px); margin-top:10px; color:var(--ink)">Um primeiro ciclo para tornar a relação CEO–gerências mais objetiva, previsível e acionável.</h2><div class="flow"><div class="flow-step"><span class="flow-dot">1</span><div><h4>Diagnóstico executivo e de gestão</h4><p>Entender o que o CEO precisa enxergar, quais ritos existem, onde há fricção entre áreas e quais informações já vivem nos sistemas atuais.</p></div></div><div class="flow-step"><span class="flow-dot">2</span><div><h4>Desenho do cockpit gerencial</h4><p>Configurar processos críticos, rotinas, responsáveis, metas, projetos e evidências para a primeira camada de controle.</p></div></div><div class="flow-step"><span class="flow-dot">3</span><div><h4>Operação assistida com governança</h4><p>Conduzir o primeiro recorte com líderes definidos, revisar qualidade das informações e ajustar a experiência à cultura da organização.</p></div></div><div class="flow-step"><span class="flow-dot">4</span><div><h4>Roadmap de expansão</h4><p>Decidir, a partir da evidência do primeiro recorte, quando e como ampliar para outros departamentos, plantas, níveis e jornadas de pessoas.</p></div></div></div></div>
+        <aside class="scope-card"><h3>Camada proposta para o primeiro recorte</h3><p>Uma hipótese de trabalho para ser validada com Luiz Francisco da Cunha e as lideranças envolvidas.</p><div style="margin-top:22px"><div class="scope-line"><b>→</b><span>CEO e suas prioridades de gestão</span></div><div class="scope-line"><b>→</b><span>Controladoria, RH, Fiscal, Industrial e Comercial</span></div><div class="scope-line"><b>→</b><span>Processos críticos e projetos transversais</span></div><div class="scope-line"><b>→</b><span>Ritos de acompanhamento, decisão e evidência</span></div><div class="scope-line"><b>→</b><span>Integrações a serem priorizadas no diagnóstico</span></div></div><p style="font-size:11px; margin-top:24px">Premissa fornecida para a conversa inicial. Escopo, integrações e indicadores serão definidos em conjunto; esta página não é uma proposta financeira.</p></aside>
+      </div>
+      <div class="shell roles"><div class="role"><b>CEO</b><span>Visão de prioridades, riscos, decisões requeridas e cadência das gerências.</span></div><div class="role"><b>Gerentes</b><span>Responsabilidades claras, portfólio de projetos, ritos e evidências por processo.</span></div><div class="role"><b>RH</b><span>Leitura estruturada para desenvolvimento, sucessão, hunting, entrevistas e onboarding.</span></div><div class="role"><b>Times</b><span>Expectativas de função, planos de evolução e rotinas alinhadas à estratégia.</span></div></div>
+    </section>
+
+    <section class="guardrails">
+      <div class="shell"><div class="section-title"><div class="eyebrow">Uso responsável de IA</div><h2>LLMs para ampliar contexto e qualidade de gestão — com decisão humana, governança e rastreabilidade.</h2></div><div class="guardrail-grid"><article class="guardrail"><b>Gestão assistida, não gestão automática</b><p>A IA pode organizar processos, sintetizar ciclos, preparar perguntas e apontar lacunas. Aprovação, avaliação e decisão continuam humanas.</p></article><article class="guardrail"><b>Privacidade e controle de acesso</b><p>Informações comportamentais, de desempenho e remuneração exigem perfis de acesso, trilhas de auditoria e desenho compatível com LGPD.</p></article><article class="guardrail"><b>Integração com propósito</b><p>Asana, Trello, Planner e sistemas corporativos só entram quando a fonte, o dado, o responsável e o uso gerencial forem explicitamente definidos.</p></article></div></div>
+    </section>
+
+    <section class="closing" id="proximo-passo">
+      <div class="shell closing-grid"><div><div class="eyebrow" style="color:#fff">Próximo passo recomendado</div><h2>Transformar a intenção em um diagnóstico executivo bem delimitado.</h2><p>Antes de dimensionar setup, adaptação, desenvolvimento ou modelo de fornecimento, a Optivio propõe validar o primeiro recorte de gestão e seus critérios de sucesso.</p></div><div class="next-box"><b>Conversa de alinhamento</b><ol><li>Confirmar as perguntas críticas do CEO.</li><li>Selecionar os processos e ritos de maior impacto.</li><li>Mapear fontes de dados e restrições de segurança.</li><li>Definir participantes, evidências e condição de sucesso do primeiro recorte.</li></ol></div></div>
+    </section>
+  </main>
+  <footer><div class="shell"><div class="source-note">Contexto público: SCHÜTZ VASITEX — embalagens industriais, IBCs, tambores, bombonas, recondicionamento, reciclagem e logística reversa. Fonte: <a href="https://www.schuetz-packaging.net/schuetz-vasitex-brazil/pt/" target="_blank" rel="noreferrer">site institucional da SCHÜTZ VASITEX</a>. Premissas de foco e escala são de conversa inicial e requerem validação conjunta.</div><div>Optivio • Simple Software Solutions<br/>Rui Branchini • Head de Operações</div></div></footer>
+  <script>
+    const tabs = document.querySelectorAll('.screen-tab');
+    const panels = document.querySelectorAll('.screen-panel');
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+      tabs.forEach(item => item.classList.remove('active'));
+      panels.forEach(panel => panel.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.panel).classList.add('active');
+    }));
+  </script>
+</body>
+</html>
